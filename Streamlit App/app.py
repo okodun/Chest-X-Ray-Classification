@@ -5,7 +5,6 @@ favicon created by: https://favicon.io/emoji-favicons/lungs
 
 import streamlit as st
 from streamlit_image_comparison import image_comparison
-import base64
 
 # texts and image paths
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Gallal and Philippe Huber."
@@ -32,6 +31,7 @@ image_comparison(img1=HEALTHY_LUNG,
 
 # create columns for paper
 code = """
+import base64
 st.header("Background Knowledge")
 col1, col2 = st.columns(2)
 col1.subheader("Stanford Paper")
