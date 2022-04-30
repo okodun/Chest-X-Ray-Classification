@@ -31,6 +31,7 @@ image_comparison(img1=HEALTHY_LUNG,
                  label2="An Infected Lung")
 
 # create columns for paper
+code = """
 st.header("Background Knowledge")
 col1, col2 = st.columns(2)
 col1.subheader("Stanford Paper")
@@ -40,4 +41,5 @@ with open("/home/felix/Downloads/Stanford paper.pdf", "rb") as pdf:
                   F'height="1000" type="application/pdf"></iframe>'
     col1.markdown(pdf_display, unsafe_allow_html=True)
 
-col2.write("Test")
+col2.write("Test")"""
+st.code(code)
