@@ -20,26 +20,48 @@ st.set_page_config(page_title="Chest X-Ray Classification",
 
 # set title and header for introduction
 st.title("Chest X-Ray Classification")
-st.header("A project by group 3")
-st.write("How do you know the difference?")
+st.header("Pneumonia - A short introduction")
+pneumonia_text = """
+Pneumonia is a respiratory infection caused by bacteria, viruses or fungi.
+Did you know that pneumonia accounts for approximately 14% of all deaths of children under 5 years old? [1]
+However, the disease can be dangerous for adults as well... 
+"""
+st.text(pneumonia_text)
 
 # comparison of lungs
-image_comparison(img1=HEALTHY_LUNG,
-                 label1="A Healthy Lung",
-                 img2=INFECTED_LUNG,
-                 label2="An Infected Lung")
+image_comparison(img1=HEALTHY_LUNG, label1="A Healthy Lung", img2=INFECTED_LUNG, label2="Lung With Pneumonia")
 
-# create columns for paper
-code = """
-import base64
-st.header("Background Knowledge")
-col1, col2 = st.columns(2)
-col1.subheader("Stanford Paper")
-with open("/home/felix/Downloads/Stanford paper.pdf", "rb") as pdf:
-    base64_pdf = base64.b64encode(pdf.read()).decode("utf-8")
-    pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" ' \
-                  F'height="1000" type="application/pdf"></iframe>'
-    col1.markdown(pdf_display, unsafe_allow_html=True)
+# introduction team members
+st.header("The Team")
+col1, col2, col3 = st.columns(3)
 
-col2.write("Test")"""
-st.code(code)
+# introduction Felix
+col1.subheader("Felix Schuhmann")
+intro_felix = """
+I am currently a working student at Siemens Healthineers and study
+information systems at FAU. Also, I love all kinds of sports.
+Therefore, I am naturally interested in all health related topics.
+"""
+col1.text(intro_felix)
+
+# introduction Hussein
+col2.subheader("Hussein Gallal")
+intro_hussein = """
+Lorem ipsum dolor sit amet...
+"""
+col2.text(intro_hussein)
+
+# introduction Philippe
+col3.subheader("Philippe Huber")
+intro_philippe = """
+Lorem ipsum dolor sit amet...
+"""
+col3.text(intro_philippe)
+
+# references
+with st.expander("References"):
+    references = """
+    [1] Pneumonia, World Health Organization
+    https://www.who.int/news-room/fact-sheets/detail/pneumonia
+    """
+    st.text(references)
