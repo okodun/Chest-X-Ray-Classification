@@ -19,7 +19,7 @@ st.set_page_config(page_title="Chest X-Ray Classification",
                    menu_items={"About": ABOUT_TEXT})
 
 # set title and header for introduction
-st.title("Chest X-Ray Classification")
+st.title("Chest X-Ray Classification ")
 st.header("Pneumonia - A short introduction")
 pneumonia_text = """
 Pneumonia is a respiratory infection caused by bacteria, viruses or fungi. Did you know that pneumonia accounts
