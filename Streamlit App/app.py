@@ -7,7 +7,7 @@ import streamlit as st
 from streamlit_image_comparison import image_comparison
 
 # texts and image paths
-ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Gallal and Philippe Huber."
+ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal and Philippe Huber."
 ICON = "/home/felix/PycharmProjects/Chest-X-Ray-Classification/Streamlit App/.images/lungs_favicon.png"
 HEALTHY_LUNG = "/home/felix/PycharmProjects/Chest-X-Ray-Classification/Streamlit App/.images/healthy_lung.jpeg"
 INFECTED_LUNG = "/home/felix/PycharmProjects/Chest-X-Ray-Classification/Streamlit App/.images/infected_lung.jpeg"
@@ -35,7 +35,7 @@ image_comparison(img1=HEALTHY_LUNG, label1="A Healthy Lung", img2=INFECTED_LUNG,
 # what and how are we going to solve this
 st.header("The Project")
 project_description = """
-We use machine learning to analyse chest x-ray images.Our goal is to implement an app which can ultimately detect
+We use machine learning to analyse chest x-ray images. Our goal is to implement an app which can ultimately detect
 pneumonia and help physicians to reliably diagnose pneumonia. Just kidding, we are not trying to change the world
 (yet). We are doing this project as part of our seminar ML4B.
 """
@@ -55,7 +55,7 @@ Therefore, I am naturally interested in all health related topics.
 col1.text(intro_felix)
 
 # introduction Hussein
-col2.subheader("Hussein Gallal")
+col2.subheader("Hussein Galal")
 intro_hussein = """
 Lorem ipsum dolor sit amet...
 """
