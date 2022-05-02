@@ -9,8 +9,8 @@ from streamlit_image_comparison import image_comparison
 # texts and image paths
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal and Philippe Huber."
 ICON = ".images/lungs_favicon.png"
-HEALTHY_LUNG = ".images/healthy_lung.jpeg"
-INFECTED_LUNG = ".images/infected_lung.jpeg"
+HEALTHY_LUNG = ".images/f8b94^Ca-20f2-45ff-b4e2-b43f11441c00.jpg"
+INFECTED_LUNG = ".images/724acb9e-cd78-4c48-9e4d-29ba2455114c.jpg"
 
 # set page configuration for app
 st.set_page_config(page_title="Chest X-Ray Classification",
