@@ -5,33 +5,7 @@ image-comparison provided by robmarkcole@GitHub
 """
 
 import streamlit as st
-from streamlit_juxtapose import juxtapose
-from PIL import Image
-import requests
-import pathlib
-
-
-def show_slider():
-    STREAMLIT_STATIC_PATH = (pathlib.Path(st.__path__[0]) / "static")
-
-    IMG1 = "img1.jpg"
-    IMG2 = "img2.jpg"
-
-    def fetch_img_from_url(url: str) -> Image:
-        img = Image.open(requests.get(url, stream=True).raw)
-        return img
-
-    img1 = fetch_img_from_url(
-        "https://github.com/okodun/Chest-X-Ray-Classification/blob/main/Streamlit_App/.images/healthy_lung.jpeg?raw=true")
-    img1.save(STREAMLIT_STATIC_PATH / IMG1)
-
-    img2 = fetch_img_from_url(
-        "https://github.com/okodun/Chest-X-Ray-Classification/blob/main/Streamlit_App/.images/infected_lung.jpeg?raw=true")
-    img2.save(STREAMLIT_STATIC_PATH / IMG2)
-
-    # show
-    juxtapose(IMG1, IMG2, height=700)
-
+from streamlit_image_comparison import image_comparison
 
 # texts and image paths
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal and Philippe Huber."
@@ -57,7 +31,7 @@ on the trained eye of a radiologist [3].
 st.text(pneumonia_text)
 
 # comparison of lungs
-show_slider()
+image_comparison(img1=HEALTHY_LUNG, label1="A Healthy Lung", img2=INFECTED_LUNG, label2="An Infected Lung")
 
 # what and how are we going to solve this
 st.header("The Project")
