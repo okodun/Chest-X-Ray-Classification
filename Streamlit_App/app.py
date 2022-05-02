@@ -24,15 +24,16 @@ def fetch_img_from_url(url: str) -> Image:
     img = Image.open(requests.get(url, stream=True).raw)
     return img
 
-form = st.form(key="Image comparison")
-img1_url = form.text_input("Image one url", value=DEFAULT_IMG1_URL)
-img1 = fetch_img_from_url(img1_url)
+# form = st.form(key="Image comparison")
+# img1_url = form.text_input("Image sbfgsofosdh url", value=DEFAULT_IMG1_URL)
+img1 = Image.open(".images/healthy_lung.jpeg")
 img1.save(STREAMLIT_STATIC_PATH / IMG1)
 
-img2_url = form.text_input("Image two url", value=DEFAULT_IMG2_URL)
-img2 = fetch_img_from_url(img2_url)
+# img2_url = form.text_input("Image two url", value=DEFAULT_IMG2_URL)
+# img2 = fetch_img_from_url(img2_url)
+img2 = Image.open(".images/infected_lung.jpeg")
 img2.save(STREAMLIT_STATIC_PATH / IMG2)
 
-submit = form.form_submit_button("Submit")
-if submit:
-    juxtapose(IMG1, IMG2)
+# submit = form.form_submit_button("Submit")
+# if submit:
+juxtapose(IMG1, IMG2)
