@@ -16,4 +16,7 @@ img1 = Image.open(BytesIO(conn.content))
 url = "https://github.com/okodun/Chest-X-Ray-Classification/blob/main/Streamlit_App/.images/infected_lung.jpeg?raw=true"
 conn = requests.get(url)
 img2 = Image.open(BytesIO(conn.content))
-image_comparison(img1=img1, img2=img2)
+
+# show
+st.image(img1)
+st.image(img2)
