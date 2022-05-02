@@ -26,7 +26,7 @@ def juxtapose(img1: str, img2: str, height: int = 1000):  # data
     """
             + js_block
             + """
-        <div id="foo" style="width: 30%; height: """
+        <div id="foo" style="width: 100%; height: """
             + str(height)
             + '''px; margin: 1px;"></div>
         <script>
@@ -48,9 +48,9 @@ def juxtapose(img1: str, img2: str, height: int = 1000):  # data
             {
                 animate: true,
                 showLabels: true,
-                showCredits: true,
+                showCredits: false,
                 startingPosition: "50%",
-                makeResponsive: true
+                makeResponsive: false
             });
         </script>
     """
