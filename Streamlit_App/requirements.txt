@@ -9,7 +9,6 @@ beautifulsoup4==4.11.1
 bleach==5.0.0
 blinker==1.4
 blis==0.7.6
-Brlapi==0.8.3
 btrfsutil==5.17
 CacheControl==0.12.6
 cachetools==5.0.0
