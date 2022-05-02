@@ -57,14 +57,17 @@ col1.text(intro_felix)
 # introduction Hussein
 col2.subheader("Hussein Galal")
 intro_hussein = """
-Lorem ipsum dolor sit amet...
+I'm currently studying business Information Systems in the 4th 
+semester. Im from Egypt and this is my second year here in germany.
+I love to play volleyball in my spare time.
 """
 col2.text(intro_hussein)
 
 # introduction Philippe
 col3.subheader("Philippe Huber")
 intro_philippe = """
-Lorem ipsum dolor sit amet...
+I am also studying Information Systems in the 6th semester. In my
+spare time I love skiing and bouldering.
 """
 col3.text(intro_philippe)
 
