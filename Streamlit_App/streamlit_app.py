@@ -1,10 +1,42 @@
 """
 Created by Felix Schuhmann, Hussein Gallal, Philippe Huber
 favicon created by: https://favicon.io/emoji-favicons/lungs
+image-comparison provided by robmarkcole@GitHub
 """
 
 import streamlit as st
-from streamlit_image_comparison import image_comparison
+from streamlit_juxtapose import juxtapose
+from PIL import Image
+import requests
+import pathlib
+
+
+def show_slider():
+    STREAMLIT_STATIC_PATH = (
+            pathlib.Path(st.__path__[0]) / "static"
+    )
+
+    IMG1 = "img1.png"
+    IMG2 = "img2.png"
+
+    def fetch_img_from_url(url: str) -> Image:
+        img = Image.open(requests.get(url, stream=True).raw)
+        return img
+
+    # form = st.form(key="Image comparison")
+    # img1_url = form.text_input("Image sbfgsofosdh url", value=DEFAULT_IMG1_URL)
+    img1 = fetch_img_from_url(
+        "https://github.com/okodun/Chest-X-Ray-Classification/blob/main/Streamlit_App/.images/healthy_lung.jpeg?raw=true")
+    img1.save(STREAMLIT_STATIC_PATH / IMG1)
+
+    # img2_url = form.text_input("Image two url", value=DEFAULT_IMG2_URL)
+    img2 = fetch_img_from_url(
+        "https://github.com/okodun/Chest-X-Ray-Classification/blob/main/Streamlit_App/.images/infected_lung.jpeg?raw=true")
+    img2.save(STREAMLIT_STATIC_PATH / IMG2)
+
+    # show
+    juxtapose(IMG1, IMG2, height=600)
+
 
 # texts and image paths
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal and Philippe Huber."
@@ -30,7 +62,7 @@ on the trained eye of a radiologist [3].
 st.text(pneumonia_text)
 
 # comparison of lungs
-image_comparison(img1=HEALTHY_LUNG, label1="A Healthy Lung", img2=INFECTED_LUNG, label2="Lung With Pneumonia")
+show_slider()
 
 # what and how are we going to solve this
 st.header("The Project")

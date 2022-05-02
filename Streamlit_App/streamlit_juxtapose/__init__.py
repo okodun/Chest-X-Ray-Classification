@@ -1,5 +1,6 @@
 import streamlit.components.v1 as components
 
+
 def juxtapose(img1: str, img2: str, height: int = 1000):  # data
 
     """Create a new timeline component.
@@ -20,28 +21,28 @@ def juxtapose(img1: str, img2: str, height: int = 1000):  # data
 
     # write html block
     htmlcode = (
-        css_block
-        + """ 
+            css_block
+            + """ 
     """
-        + js_block
-        + """
-        <div id="foo" style="width: 95%; height: """
-        + str(height)
-        + '''px; margin: 1px;"></div>
+            + js_block
+            + """
+        <div id="foo" style="width: 30%; height: """
+            + str(height)
+            + '''px; margin: 1px;"></div>
         <script>
         slider = new juxtapose.JXSlider('#foo',
             [
                 {
                     src: "'''
-        + img1
-        + '''",
-                    label: 'img1',
+            + img1
+            + '''",
+                    label: 'A Healthy Lung',
                 },
                 {
                     src: "'''
-        + img2
-        + """",
-                    label: 'img2',
+            + img2
+            + """",
+                    label: 'An Infected Lung',
                 }
             ],
             {
