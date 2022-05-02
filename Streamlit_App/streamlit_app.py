@@ -5,12 +5,13 @@ favicon created by: https://favicon.io/emoji-favicons/lungs
 
 import streamlit as st
 from streamlit_image_comparison import image_comparison
+from PIL import Image
 
 # texts and image paths
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal and Philippe Huber."
 ICON = ".images/lungs_favicon.png"
-HEALTHY_LUNG = ".images/healthy_lung.jpeg"
-INFECTED_LUNG = ".images/infected_lung.jpeg"
+HEALTHY_LUNG = Image.open(".images/healthy_lung.jpeg")
+INFECTED_LUNG = Image.open(".images/infected_lung.jpeg")
 
 # set page configuration for app
 st.set_page_config(page_title="Chest X-Ray Classification",
