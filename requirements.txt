@@ -1,3 +1,4 @@
 streamlit==1.8.1
 streamlit_image_comparison==0.0.2
 opencv-python-headless
+cv2
