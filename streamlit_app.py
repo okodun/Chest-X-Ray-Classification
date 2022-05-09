@@ -1,5 +1,5 @@
 """
-Created by Felix Schuhmann, Hussein Gallal, Philippe Huber
+Created by Felix Schuhmann, Hussein Gallal, Philippe Huber, Abderrahmane Bennani
 favicon created by: https://favicon.io/emoji-favicons/lungs
 image-comparison provided by robmarkcole@GitHub
 """
@@ -8,7 +8,7 @@ import streamlit as st
 from streamlit_image_comparison import image_comparison
 
 # texts and image paths
-ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal and Philippe Huber."
+ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
 ICON = "lungs_favicon.png"
 HEALTHY_LUNG = "healthy_lung.jpeg"
 INFECTED_LUNG = "infected_lung.jpeg"
@@ -44,7 +44,8 @@ st.text(project_description)
 
 # introduction team members
 st.header("The Team")
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
+col3, col4 = st.columns(2)
 
 # introduction Felix
 col1.subheader("Felix Schuhmann")
@@ -71,6 +72,13 @@ I am also studying Information Systems in the 6th semester. In my
 spare time I love skiing and bouldering.
 """
 col3.text(intro_philippe)
+
+# introduction Abderrahmane
+col4.subheader("Abderrahmane Bennani")
+intro_abderrahmane = """
+Lorem ipsum dolor sit amet...
+"""
+col4.text(intro_abderrahmane)
 
 # references
 with st.expander("References"):
