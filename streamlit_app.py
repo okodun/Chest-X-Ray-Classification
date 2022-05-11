@@ -76,7 +76,9 @@ col3.text(intro_philippe)
 # introduction Abderrahmane
 col4.subheader("Abderrahmane Bennani")
 intro_abderrahmane = """
-Lorem ipsum dolor sit amet...
+I'm studying Business Information Systems in 4th semester and I'm a 
+working Student in Web Content Management. I often play volleyball 
+with friends and love to travel from time to time.
 """
 col4.text(intro_abderrahmane)
 
