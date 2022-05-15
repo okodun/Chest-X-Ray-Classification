@@ -28,7 +28,7 @@ radiologists</strong>
 https://pubmed.ncbi.nlm.nih.gov/30457988/ <br>
 <br>
 
-Rajpurkar et al. 2018 <br>
+Rajpurkar et al. 2017 <br>
 <strong>CheXNet: Radiologist-Level Pneumonia Detection on Chest X-Rays with Deep Learning</strong><br>
 https://arxiv.org/pdf/1711.05225.pdf <br>
 </p>
