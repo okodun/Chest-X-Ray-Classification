@@ -33,8 +33,10 @@ Rajpurkar et al. 2017 <br>
 https://arxiv.org/pdf/1711.05225.pdf <br>
 </p>
 
-H. Park, K. Kim, S. Park and J. Choi, "Medical Image Captioning Model to Convey More Details: Methodological Comparison of Feature Difference Generation," in IEEE Access, vol. 9, pp. 150560-150568, 2021, doi: 10.1109/ACCESS.2021.3124564.
+H. Park, K. Kim, S. Park and J. Choi, "Medical Image Captioning Model to Convey More Details: Methodological Comparison of Feature Difference Generation," in IEEE Access, vol. 9, pp. 150560-150568, 2021, doi: 10.1109/ACCESS.2021.3124564.: <strong>https://ieeexplore.ieee.org/abstract/document/9597615</strong>
 
 Medical Image Captioning on Chest X-Rays:
-https://towardsdatascience.com/medical-image-captioning-on-chest-x-rays-a43561a6871d
+<strong>https://towardsdatascience.com/medical-image-captioning-on-chest-x-rays-a43561a6871d</strong>
 
+Lakhani, Paras, et al. "Hello world deep learning in medical imaging." Journal of digital imaging 31.3 (2018): 283-289. :
+<stronghttps://link.springer.com/article/10.1007/S10278-018-0079-6</strong>
