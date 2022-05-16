@@ -39,4 +39,4 @@ Medical Image Captioning on Chest X-Rays:
 <strong>https://towardsdatascience.com/medical-image-captioning-on-chest-x-rays-a43561a6871d</strong>
 
 Lakhani, Paras, et al. "Hello world deep learning in medical imaging." Journal of digital imaging 31.3 (2018): 283-289. :
-<stronghttps://link.springer.com/article/10.1007/S10278-018-0079-6</strong>
+<strong>https://link.springer.com/article/10.1007/S10278-018-0079-6</strong>
