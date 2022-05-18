@@ -40,3 +40,9 @@ Medical Image Captioning on Chest X-Rays:
 
 Lakhani, Paras, et al. "Hello world deep learning in medical imaging." Journal of digital imaging 31.3 (2018): 283-289. :
 <strong>https://link.springer.com/article/10.1007/S10278-018-0079-6</strong>
+
+Accuracy of deep learning for automated detection of pneumonia using chest X-Ray images: A systematic review and meta-analysis: 
+<strong>https://www.sciencedirect.com/science/article/abs/pii/S001048252030247X</strong>
+
+Amit Kumar Jaiswal, Prayag Tiwari, Sachin Kumar, Deepak Gupta, Ashish Khanna, Joel J.P.C. Rodrigues,
+Identifying pneumonia in chest X-rays: A deep learning approach: <strong>https://www.sciencedirect.com/science/article/pii/S0263224119305202</strong>
