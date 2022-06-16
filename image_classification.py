@@ -9,7 +9,7 @@ import pandas
 import matplotlib.pyplot as plt
 import cv2
 
-BASE_PATH = "/home/felix/Documents/University/SS2022/ML4B/Data Set Chest X-Ray"
+BASE_PATH = ""
 
 
 def __check_cuda_gpu() -> bool:
