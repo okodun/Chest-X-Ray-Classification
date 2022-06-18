@@ -49,7 +49,6 @@ def __show_sample_images(data: [], labels: []):
 
 
 def get_data(base_path: str, mode: str) -> ():
-    """ loads images as pandas DataFrame for either training, testing or validation """
 
     # raise exception if mode is unknown
     if mode not in ("test", "train", "val"):
