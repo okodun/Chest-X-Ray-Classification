@@ -1,15 +1,20 @@
 """
 https://www.projectpro.io/article/deep-learning-for-image-classification-in-python-with-cnn/418#toc-1
 (https://towardsdatascience.com/medical-x-ray-%EF%B8%8F-image-classification-using-convolutional-neural-network-9a6d33b1c2a)
+https://keras.io/examples/vision/image_classification_from_scratch/
 """
 
 import tensorflow as tf
+import keras
+from keras import layers, utils
 from pathlib import Path
 import pandas
 import matplotlib.pyplot as plt
 import cv2
 
-BASE_PATH = ""
+BASE_PATH = "/home/felix/Documents/University/SS2022/ML4B/Data Set Chest X-Ray"
+IMAGE_SIZE = (512, 512)
+BATCH_SIZE = 16
 
 
 def __check_cuda_gpu() -> bool:
@@ -36,7 +41,7 @@ def __show_sample_images(data: [], labels: []):
     for i in range(0, 10):
         plt.subplot(2, 5, i + 1)
         img = cv2.imread(str(data[i]))
-        img = cv2.resize(img, (512, 512))
+        img = cv2.resize(img, IMAGE_SIZE)
         plt.imshow(img)
         plt.title(labels[i])
         plt.axis("off")
@@ -73,6 +78,51 @@ def get_data(base_path: str, mode: str) -> ():
     return train_data, train_labels
 
 
-train = get_data(BASE_PATH, "val")
-__plot(train[0], train[1])
-__show_sample_images(train[0], train[1])
+def create_dataset(mode: str):
+    """ creates a dataset that can be used in an ML model """
+
+    #  raise exception if mode is unknown
+    if mode not in ("test", "train", "val"):
+        raise ValueError
+
+    subsets = {
+        "test": "testing",
+        "train": "training",
+        "val": "validation"
+    }
+    subset_name = subsets.get(mode)
+
+    # create path to dataset
+    path = BASE_PATH + "/" + mode
+
+    # create data set
+    return keras.utils.image_dataset_from_directory(
+        path,
+        validation_split=0.2,
+        subset=subset_name,
+        seed=1337,
+        image_size=IMAGE_SIZE,  # resize images
+        batch_size=BATCH_SIZE  # define batch size
+    )
+
+
+""" create model """
+
+# data augmentation
+data_augmentation = keras.Sequential([layers.RandomFlip("horizontal"), layers.RandomRotation(0.1)])
+
+train_ds = create_dataset("train")
+# val_ds = create_dataset("val")
+# test_ds = create_dataset("test")
+
+
+plt.figure(figsize=(10, 10))
+for images, _ in train_ds.take(1):
+    for i in range(9):
+        augmented_images = data_augmentation(images)
+        ax = plt.subplot(3, 3, i + 1)
+        plt.imshow(augmented_images[0].numpy().astype("uint8"))
+        plt.axis("off")
+
+plt.show()
+# save model!!!
