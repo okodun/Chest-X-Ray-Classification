@@ -109,7 +109,7 @@ def create_dataset(mode: str):
 def create_model(input_shape, num_classes):
     """
     Creates a keras pipeline.
-    Pipeline created by keras (https://keras.io/examples/vision/image_classification_from_scratch/)
+    Pipeline created by keras.com (https://keras.io/examples/vision/image_classification_from_scratch/)
     """
 
     # define parameters and augment data
