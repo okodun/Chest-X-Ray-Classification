@@ -90,7 +90,6 @@ g = GradCam("save_at_50.h5")
 if i is not None:
     with open(os.path.join("", i.name), "wb") as file:
         file.write(i.getbuffer())
-        st.text("saved")
     g.create(i.name, cam_path="img2.jpeg")
     image_comparison(img1=i.name, label1="", img2="img2.jpeg")
     os.remove(i.name)
