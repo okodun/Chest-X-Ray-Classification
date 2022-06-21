@@ -84,7 +84,8 @@ with friends and love to travel from time to time.
 """
 col4.text(intro_abderrahmane)
 
-i = st.file_uploader(header="Test", type=["jpeg", "jpg", "png"])
+st.header("Upload your x-ray")
+i = st.file_uploader(type=["jpeg", "jpg", "png"])
 g = GradCam("save_at_50.h5")
 
 if i is not None:
