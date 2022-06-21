@@ -7,3 +7,4 @@ keras
 pandas
 matplotlib
 numpy
+torch
