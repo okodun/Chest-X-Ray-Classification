@@ -5,11 +5,12 @@ https://www.projectpro.io/article/deep-learning-for-image-classification-in-pyth
 
 import tensorflow as tf
 import keras
-from keras import layers, utils, callbacks, optimizers
+from keras import layers, utils, callbacks, optimizers, preprocessing
 from pathlib import Path
 import pandas
 import cv2
 import matplotlib.pyplot as plt
+import os
 
 # constants
 BASE_PATH = "/home/felix/Documents/University/SS2022/ML4B/Data Set Chest X-Ray"
@@ -198,8 +199,37 @@ def train_model(epochs: int, path_to_model: str):
     model.save(path_to_model)
 
 
+def predict(path_to_image: str, path_to_model: str):
+    """ categorizes a given image """
+
+    # load model
+    model = keras.models.load_model("save_at_50.h5")
+
+    """model.compile(
+        optimizer=keras.optimizers.Adam(1e-3),
+        loss="binary_crossentropy",
+        metrics=["accuracy"],
+    )"""
+
+    # load image
+    image = keras.utils.load_img(path_to_image, target_size=IMAGE_SIZE)
+    image_array = keras.utils.img_to_array(image)
+    image_array = tf.expand_dims(image_array, 0)
+    print("success")
+
+    # predict
+    predictions = model.predict(x=image_array)
+
+    # score for pneumonia -> normal = 1 - score
+    return predictions[0]
+
+
+"""print(predict(
+    "/home/felix/Documents/University/SS2022/ML4B/Data Set Chest X-Ray/test/PNEUMONIA/person85_bacteria_423.jpeg",
+    "save_at_50.h5"))"""
+
 # testing
-"""val_ds = create_dataset("val")
+val_ds = create_dataset("val")
 model = keras.models.load_model("save_at_50.h5")
 model.compile(
     optimizer=keras.optimizers.Adam(1e-3),
@@ -213,7 +243,7 @@ test = idg.flow_from_directory(BASE_PATH + "/test", class_mode="binary", batch_s
 ds = keras.utils.image_dataset_from_directory(
     BASE_PATH + "/test",
     validation_split=0.2,
-    subset="testing",
+    subset="training",
     seed=1337,
     image_size=IMAGE_SIZE,  # resize images
     batch_size=BATCH_SIZE  # define batch size
@@ -241,4 +271,4 @@ print(sum(results) / len(results))
 print(
     "This image is %.2f percent normal and %.2f percent pneumonia."
     % (100 * (1 - score), 100 * score)
-)"""
+)
