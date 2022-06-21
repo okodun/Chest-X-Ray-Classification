@@ -6,6 +6,8 @@ image-comparison provided by robmarkcole@GitHub
 
 import streamlit as st
 from streamlit_image_comparison import image_comparison
+import os
+from grad_cam import GradCam
 
 # texts and image paths
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
@@ -81,6 +83,18 @@ working Student in Web Content Management. I often play volleyball
 with friends and love to travel from time to time.
 """
 col4.text(intro_abderrahmane)
+
+i = st.file_uploader(label="Test", type=["jpeg", "jpg", "png"])
+g = GradCam("save_at_50.h5")
+
+if i is not None:
+    with open(os.path.join("", i.name), "wb") as file:
+        file.write(i.getbuffer())
+        st.text("saved")
+    g.create(i.name, cam_path="img2.jpeg")
+    image_comparison(img1=i.name, label1="", img2="img2.jpeg")
+    os.remove(i.name)
+    os.remove("img2.jpeg")
 
 # references
 with st.expander("References"):
