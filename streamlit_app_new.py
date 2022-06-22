@@ -8,6 +8,7 @@ import streamlit as st
 from streamlit_image_comparison import image_comparison
 import os
 from grad_cam import GradCam
+import image_classification as ic
 
 # texts and image paths
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
@@ -106,7 +107,7 @@ DP_text = """
             translations, rotations, and much more.By applying just a couple of these transformations to our training data,
             we can easily double or triple the number of training examples and create a very robust model.
             """
-Mod_text =""" For the Modeling Phase we decided on building a Convolutional Neural Network.
+Mod_text = """ For the Modeling Phase we decided on building a Convolutional Neural Network.
             Convolutional Neural Network or CNN is a type of artificial neural network, which is widely used for image/object recognition
             and classification. Deep Learning thus recognizes objects in an image by using a CNN.
             CNNs are playing a major role in diverse tasks/functions like image processing problems,
@@ -131,16 +132,15 @@ with st.expander("Data Understanding"):
         of Pneumonia is three times
          the size of normal x-rays so if we only use this data set to train our model, the model would have good accuracy to detect a lung
         with pneumonia, however with normal lungs the accuracy would be a little low """)
-    #insert diagramms here
+    # insert diagramms here
 with st.expander("Data Preparation"):
     st.text(DP_text)
     st.subheader("Data Augmentation example")
-    #insert photo of example here
+    # insert photo of example here
 
 with st.expander("Modeling"):
     st.text(Mod_text)
-    
-    
+
 st.header("Now the Moment that you have been all waiting for..... our ACTUAL Project")
 
 st.header("Upload your x-ray to test wether it is healthy or with pneumonia")
@@ -152,12 +152,14 @@ if i is not None:
         file.write(i.getbuffer())
     g.create(i.name, cam_path="img2.jpeg")
     image_comparison(img1=i.name, label1="", img2="img2.jpeg")
+
+    # prediction results
+    score = ic.predict(i.name, "save_at_50.h5")
+    healthy_res = "%.4f%%" % (100 * (1 - score))
+    pneumonia_res = "%.4f%%" % (100 * score)
+    st.text("Your image is with " + healthy_res + " a healthy lung and with " + pneumonia_res + " a infected lung")
     os.remove(i.name)
     os.remove("img2.jpeg")
-    # prediction results
-    healthy_res = 0
-    pneumonia_res = 0
-    st.text("Your image is with " + healthy_res +"% a healthy lung and with " + pneumonia_res + "% a infected lung" )
 
 # references
 with st.expander("References"):
@@ -178,9 +180,6 @@ with st.expander("References"):
     https://www.simplilearn.com/tutorials/deep-learning-tutorial/what-is-keras
     
     https://www.happiestminds.com/insights/convolutional-neural-networks-cnns/
-    
-    
-    
     """
 
     st.text(references)

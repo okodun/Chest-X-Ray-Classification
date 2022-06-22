@@ -5,12 +5,11 @@ https://www.projectpro.io/article/deep-learning-for-image-classification-in-pyth
 
 import tensorflow as tf
 import keras
-from keras import layers, utils, callbacks, optimizers, preprocessing
+from keras import layers, utils, callbacks, optimizers
 from pathlib import Path
 import pandas
 import cv2
 import matplotlib.pyplot as plt
-import os
 
 # constants
 BASE_PATH = "/home/felix/Documents/University/SS2022/ML4B/Data Set Chest X-Ray"
@@ -215,7 +214,6 @@ def predict(path_to_image: str, path_to_model: str):
     image = keras.utils.load_img(path_to_image, target_size=IMAGE_SIZE)
     image_array = keras.utils.img_to_array(image)
     image_array = tf.expand_dims(image_array, 0)
-    print("success")
 
     # predict
     predictions = model.predict(x=image_array)
@@ -224,11 +222,12 @@ def predict(path_to_image: str, path_to_model: str):
     return predictions[0]
 
 
-"""print(predict(
-    "/home/felix/Documents/University/SS2022/ML4B/Data Set Chest X-Ray/test/PNEUMONIA/person85_bacteria_423.jpeg",
-    "save_at_50.h5"))"""
+res = predict(
+    "/home/felix/Documents/University/SS2022/ML4B/Data Set Chest X-Ray/test/PNEUMONIA/person85_bacteria_422.jpeg",
+    "save_at_50.h5")
+print("Pneumonia: %.4f%% | Normal: %.4f%%" % (100 * res, 100 * (1 - res)))
 
-# testing
+"""# testing
 val_ds = create_dataset("val")
 model = keras.models.load_model("save_at_50.h5")
 model.compile(
@@ -271,4 +270,4 @@ print(sum(results) / len(results))
 print(
     "This image is %.2f percent normal and %.2f percent pneumonia."
     % (100 * (1 - score), 100 * score)
-)
+)"""
