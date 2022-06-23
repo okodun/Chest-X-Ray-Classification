@@ -222,10 +222,10 @@ def predict(path_to_image: str, path_to_model: str):
     return predictions[0]
 
 
-res = predict(
+"""res = predict(
     "/home/felix/Documents/University/SS2022/ML4B/Data Set Chest X-Ray/test/PNEUMONIA/person85_bacteria_422.jpeg",
     "save_at_50.h5")
-print("Pneumonia: %.4f%% | Normal: %.4f%%" % (100 * res, 100 * (1 - res)))
+print("Pneumonia: %.4f%% | Normal: %.4f%%" % (100 * res, 100 * (1 - res)))"""
 
 """# testing
 val_ds = create_dataset("val")
