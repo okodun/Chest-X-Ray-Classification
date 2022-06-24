@@ -9,3 +9,4 @@ matplotlib
 numpy
 torch
 scikit-image
+imagecodecs
