@@ -2,6 +2,7 @@
 https://www.projectpro.io/article/deep-learning-for-image-classification-in-python-with-cnn/418#toc-1
 (https://towardsdatascience.com/medical-x-ray-%EF%B8%8F-image-classification-using-convolutional-neural-network-9a6d33b1c2a)
 """
+import os
 
 import tensorflow as tf
 import keras
@@ -98,8 +99,8 @@ def create_dataset(mode: str):
     # create data set
     return keras.utils.image_dataset_from_directory(
         path,
-        validation_split=0.2,
-        subset=subset_name,
+        # validation_split=0.2,
+        # subset=subset_name,
         seed=1337,
         image_size=IMAGE_SIZE,  # resize images
         batch_size=BATCH_SIZE  # define batch size
@@ -174,7 +175,7 @@ def create_model(input_shape, num_classes):
     return keras.Model(inputs, outputs)
 
 
-def train_model(epochs: int, path_to_model: str):
+def train_model(epochs: int):
     """  trains a keras model """
 
     # create model
@@ -184,6 +185,11 @@ def train_model(epochs: int, path_to_model: str):
     train_ds = create_dataset("train")
     val_ds = create_dataset("val")
 
+    # prepare save stages
+    callbacks = [
+        keras.callbacks.ModelCheckpoint("new_save_at_{epoch}.h5"),
+    ]
+
     # compile model
     model.compile(
         optimizer=keras.optimizers.Adam(1e-3),
@@ -192,17 +198,14 @@ def train_model(epochs: int, path_to_model: str):
     )
 
     # actually train model
-    model.fit(train_ds[0], train_ds[1], epochs=epochs, callbacks=callbacks, validation_data=(val_ds[0], val_ds[1]))
-
-    # save model
-    model.save(path_to_model)
+    model.fit(train_ds, epochs=epochs, callbacks=callbacks, validation_data=val_ds)
 
 
 def predict(path_to_image: str, path_to_model: str):
     """ categorizes a given image """
 
     # load model
-    model = keras.models.load_model("save_at_50.h5")
+    model = keras.models.load_model(path_to_model)
 
     """model.compile(
         optimizer=keras.optimizers.Adam(1e-3),
@@ -221,6 +224,13 @@ def predict(path_to_image: str, path_to_model: str):
     # score for pneumonia -> normal = 1 - score
     return predictions[0]
 
+
+# train_model(100)
+p = BASE_PATH + "/" + "test/PNEUMONIA"
+result = []
+for i in list(next(os.walk(p))[2]):
+    result.append(predict(p + "/" + i, "new_save_at_100.h5"))
+print(sum(result) / len(result))
 
 """res = predict(
     "/home/felix/Documents/University/SS2022/ML4B/Data Set Chest X-Ray/test/PNEUMONIA/person85_bacteria_422.jpeg",
