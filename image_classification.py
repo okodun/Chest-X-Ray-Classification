@@ -225,12 +225,12 @@ def predict(path_to_image: str, path_to_model: str):
     return predictions[0]
 
 
-# train_model(100)
+"""# train_model(100)
 p = BASE_PATH + "/" + "test/PNEUMONIA"
 result = []
 for i in list(next(os.walk(p))[2]):
     result.append(predict(p + "/" + i, "new_save_at_100.h5"))
-print(sum(result) / len(result))
+print(sum(result) / len(result))"""
 
 """res = predict(
     "/home/felix/Documents/University/SS2022/ML4B/Data Set Chest X-Ray/test/PNEUMONIA/person85_bacteria_422.jpeg",

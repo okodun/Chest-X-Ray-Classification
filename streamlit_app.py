@@ -167,7 +167,7 @@ if i is not None:
     image_comparison(img1=i.name, label1="", img2="img2.jpeg")
 
     # prediction results
-    score = ic.predict(i.name, "save_at_50.h5")
+    score = ic.predict(i.name, "new_save_at_100.h5")
     healthy_res = "%.4f%%" % (100 * (1 - score))
     pneumonia_res = "%.4f%%" % (100 * score)
     st.text("Your image is with " + healthy_res + " a healthy lung and with " + pneumonia_res + " a infected lung")
