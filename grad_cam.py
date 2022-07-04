@@ -7,6 +7,7 @@ import keras
 from keras import utils
 import matplotlib.cm as cm
 import numpy as np
+import cv2
 
 
 class GradCam(object):
@@ -97,3 +98,20 @@ class GradCam(object):
 
         # Save the superimposed image
         superimposed_img.save(cam_path)
+
+    def annotate(self, path_to_image: str):
+        img = cv2.imread(path_to_image)
+
+        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+
+        lower_range = np.array([0, 0, 0], np.uint8)
+        upper_range = np.array([26, 255, 255], np.uint8)
+
+        mask = cv2.inRange(hsv, lower_range, upper_range)
+        xy = cv2.findNonZero(mask)
+        if xy.size > 0:
+            i = int(len(xy) / 2)
+            # image = cv2.imread("result.jpeg")
+            # cv2.line(image, (xy[i][0][0], xy[i][0][1]), (xy[i][0][0] + 400, xy[i][0][1] + 100), (0, 0, 0), 10)
+            cv2.putText(img, "important", (xy[i][0][0] - 50, xy[i][0][1]), 1, 1, (0, 0, 0), 2, cv2.LINE_4)
+            cv2.imwrite(path_to_image, img)

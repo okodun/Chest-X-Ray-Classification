@@ -9,6 +9,7 @@ from streamlit_image_comparison import image_comparison
 import os
 from grad_cam import GradCam
 import image_classification as ic
+import annotation_tool as at
 
 # texts and image paths
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
@@ -171,8 +172,11 @@ if i is not None:
     healthy_res = "%.4f%%" % (100 * (1 - score))
     pneumonia_res = "%.4f%%" % (100 * score)
     st.text("Your image is with " + healthy_res + " a healthy lung and with " + pneumonia_res + " a infected lung")
+    at.annotate(i.name, save=True)
+    st.image("annotated_img.png")
     os.remove(i.name)
     os.remove("img2.jpeg")
+    os.remove("annotated_img.png")
 
 # references
 with st.expander("References"):
