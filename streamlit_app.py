@@ -89,35 +89,35 @@ col4.text(intro_abderrahmane)
 BU_text = """
 The Business Understanding phase focuses on understanding the objectives and requirements of the project.
 Our Goal was to adopt deep learning for medical image applicatons. So the main focus was to develop an accurate
-model to detect using a chest x-ray if the person has pneumonia or not
+model using a chest x-ray to detect if the person has pneumonia or not.
 """
 
 DU_text = """
 In the Data Understanding phase the focus is to identify, collect, and analyze the data sets that can help you 
 accomplish the project goals. So first we tried to understand how the Data we have is structured.
 The Kaggle dataset which contains 5683 X-Ray images (JPEG). The dataset is categorized into 3 which are training,
-testing, and validation, each image category consists of subfolders like Normal and Pneumonia. Clearly, chest X-ray
+testing, and validation, each image category consists of the two subfolders Normal and Pneumonia. Clearly, chest X-ray
 images (anterior-posterior) have been examined by the review accomplices of pediatric patients within the age group
 (1 to 5 years) collected from Guangzhou Women and Children Medical Center, Guangzhou, Southern China. We took all
 chest X-ray imaging and applied them as a major aspect of patients' normal clinical consideration.
 """
 
 DP_text = """ 
-In the Data Preperation phase we didn't have to do so much work, sicne our data was already split in training, test 
-and validation data sets.However the data samples were taken in differetn sizes and Quality so whe had
+In the Data Preperation phase we didn't have to do too much work, since our data was already split in training, test 
+and validation data sets. However the data samples were taken in different sizes and quality so we had
 to resize the pictures to a standard size und set the data to a standard quality. Because the Data was imbalanced, 
 to increase the number of training examples, we used data augmentation. In order to avoid overfitting problem,
 we need to expand artificially our dataset. We can make your existing dataset even larger. The idea is to alter the 
 training data with small transformations to reproduce the variations. Approaches that alter the training data in ways
 that change the array representation while keeping the label the same are known as data augmentation techniques.
 Some popular augmentations people use are grayscales, horizontal flips, vertical flips, random crops, color jitters,
-translations, rotations, and much more.By applying just a couple of these transformations to our training data,
+translations, rotations, and much more. By applying just a couple of these transformations to our training data,
 we can easily double or triple the number of training examples and create a very robust model.
 """
 
 Mod_text = """
 For the Modeling Phase we decided on building a Convolutional Neural Network.
-Convolutional Neural Network or CNN is a type of artificial neural network, which is widely used for image/object
+A Convolutional Neural Network or CNN is a type of artificial neural network, which is widely used for image/object
 recognition and classification. Deep Learning thus recognizes objects in an image by using a CNN.
 CNNs are playing a major role in diverse tasks/functions like image processing problems, computer vision tasks
 like localization and segmentation, video analysis, to recognize obstacles in self-driving cars, as well as speech
@@ -125,7 +125,7 @@ recognition in natural language processing. As CNNs are playing a significant ro
 and emerging areas, they are very popular in Deep Learning. To build our CNN we used keras. Keras is a high-level,
 deep learning API developed by Google for implementing neural networks. It is written in Python and is used to make
 the implementation of neural networks easy. It also supports multiple backend neural network computation like
-tensorflow which also used for our project.TensorFlow is an open-source end-to-end platform for creating
+TensorFlow which we also used in our project. TensorFlow is an open-source end-to-end platform for creating
 Machine Learning applications. It is a symbolic math library that uses dataflow and differentiable programming to
 perform different tasks focused on training and inference of deep neural networks. It allows developers to create
 machine learning applications using various tools, libraries, and community resources. Essentialy we used Tensorflow,
