@@ -18,7 +18,7 @@ train = "Data Set Analysis/train.png"
 
 st.title("Data Preparation")
 st.text(data_prep_1)
-st.image(train)
+st.image(train, width=500)
 st.text(data_prep_2)
 
 
