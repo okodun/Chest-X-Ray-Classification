@@ -105,13 +105,20 @@ class GradCam(object):
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
         lower_range = np.array([0, 0, 0], np.uint8)
-        upper_range = np.array([26, 255, 255], np.uint8)
+        upper_range = np.array([10, 255, 255], np.uint8)
 
         mask = cv2.inRange(hsv, lower_range, upper_range)
         xy = cv2.findNonZero(mask)
-        if xy.size > 0:
-            i = int(len(xy) / 2)
-            # image = cv2.imread("result.jpeg")
-            # cv2.line(image, (xy[i][0][0], xy[i][0][1]), (xy[i][0][0] + 400, xy[i][0][1] + 100), (0, 0, 0), 10)
-            cv2.putText(img, "important", (xy[i][0][0] - 50, xy[i][0][1]), 1, 1, (0, 0, 0), 2, cv2.LINE_4)
+        if xy is not None:
+            i = int(len(xy) / 3)
+            if xy[i][0][0] + 500 < img.shape[1]:
+                cv2.line(img, (xy[i][0][0], xy[i][0][1]), (xy[i][0][0] + 200, xy[i][0][1]), (255, 255, 255), 5)
+                cv2.putText(img, "Most important feature", (xy[i][0][0] + 215, xy[i][0][1] + 5), 5, 1, (255, 255, 255),
+                            2,
+                            cv2.LINE_4)
+            else:
+                cv2.line(img, (xy[i][0][0], xy[i][0][1]), (xy[i][0][0] - 200, xy[i][0][1]), (255, 255, 255), 5)
+                cv2.putText(img, "Most important feature", (xy[i][0][0] - 515, xy[i][0][1] + 5), 5, 1, (255, 255, 255),
+                            2,
+                            cv2.LINE_4)
             cv2.imwrite(path_to_image, img)
