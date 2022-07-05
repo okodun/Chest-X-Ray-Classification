@@ -2,8 +2,8 @@ import streamlit as st
 
 data_prep_1 = """
 Since the data was already split into train, test and validation, we didn't have to worry about it and
-were able to jump straight into preparing the data. To start things off, we decided to augment our
-data, since there were only 4216 images to train on.
+were able to jump straight into preparing the data. To start things off, we decided to augment our data,
+since there were only 4216 images to train on.
 """
 
 data_prep_2 = "After flipping the images and randomly rotating them, we managed to gather an additional NUMMER EINFÜGEN" \
@@ -14,9 +14,11 @@ data_prep_2 = "After flipping the images and randomly rotating them, we managed 
               "healthy lungs as infected ones. With this new data set we trained a new model, which we gave 100 " \
               "epochs to learn the training data. This improved model managed to score an acceptable 70%."
 
+train = "train.png"
+
 st.title("Data Preparation")
 st.text(data_prep_1)
-st.image("train.png")
+st.image(train)
 st.text(data_prep_2)
 
 
