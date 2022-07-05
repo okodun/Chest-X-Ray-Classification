@@ -26,10 +26,3 @@ st.text(data_prep_2)
 
 # TODO wie viele zusätzliche Bilder durch augmentation?
 # TODO Evtl. 2-3 Bilder einfügen: 1x ursprüngliches Lungenbild, 1-2x augmentierte Version
-
-"""
-Verhältnisse: (Kaggle)
-    Test: normal 234, pneumonia 390, total 624
-    Train: normal 1341, pneumonia 3875, total 4216
-    Val: normal 8, pneumonia 8, total 16
-"""
