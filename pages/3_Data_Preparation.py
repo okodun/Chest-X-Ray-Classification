@@ -3,7 +3,7 @@ import streamlit as st
 data_prep_1 = """
 Since the data was already split into train, test and validation, we didn't have to worry about it and
 were able to jump straight into preparing the data. To start things off, we decided to augment our data,
-since there were only 4216 images to train on.
+since there were only 5216 images to train on.
 """
 
 data_prep_2 = """
