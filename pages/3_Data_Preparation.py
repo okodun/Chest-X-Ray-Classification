@@ -14,7 +14,7 @@ data_prep_2 = "After flipping the images and randomly rotating them, we managed 
               "healthy lungs as infected ones. With this new data set we trained a new model, which we gave 100 " \
               "epochs to learn the training data. This improved model managed to score an acceptable 70%."
 
-train = "/Data Set Analysis/train.png"
+train = "Data Set Analysis/train.png"
 
 st.title("Data Preparation")
 st.text(data_prep_1)
