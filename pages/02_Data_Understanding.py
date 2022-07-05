@@ -1,0 +1,53 @@
+import streamlit as st
+crisp='Crisp_dm.jpg'
+hist = 'train.png'
+st.title('Data Understanding')
+
+st.image(crisp)
+
+DU_text = """In the Data Understanding phase the focus is to identify, collect, and analyze
+the data sets that can help you accomplish the project goals.So first we tried to
+understand how the Data we have is structured. The Kaggle dataset which contains
+5683 X-Ray images (JPEG).The dataset is categorized into 3 which are training,testing,
+and validation, each image category consists of subfolders like Normal and Pneumonia.
+Clearly, chest X-ray images (anterior-posterior) have been examined by the review
+accomplices of pediatric patients within the age group (1 to 5 years) collected from
+Guangzhou Women and Children Medical Center, Guangzhou, Southern China.Since our Data
+was already spilt we did not have a lot of challenges in the beginning, however we had
+a big challenge which was that the dataset contained lot more of images of x-rays of
+lungs with pneumonia than x-rays with healthy lungs and we knew we had to come up
+with a solution."""
+problem2 = """Another Problem was that our data samples were
+taken using different sizes and different quality which was another problem we needed
+to overcome."""
+images_des=""" Here is an example of to samples from the dataset in the training subfolder
+for healthy lungs which you can see the difference between the quality of
+both pictures.
+"""
+
+image_high = "normal_high_quality.jpeg"
+image_low = "normal_low_quality.jpeg"
+
+
+
+st.text(DU_text)
+st.image(hist)
+st.text(problem2)
+st.text(images_des)
+
+col1,col2 = st.columns(2)
+
+with col1:
+    st.image(image_high)
+    st.text("""This one is with higher quality
+     and bigger size(2,4 MB)""")
+
+
+with col2:
+    st.image(image_low)
+    st.text("""And this sample is smaller and
+     with lower quality(140 KB)""")
+
+
+
+
