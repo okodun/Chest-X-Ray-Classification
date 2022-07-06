@@ -28,6 +28,9 @@ image1 = """Pictures/BU/CRISP-DM_Business_understanding.png"""
 st.header("Definition")
 st.image(image1)
 st.text(Description)
+
+with st.expander ( "1- Business Objectives" ):
+    st.text(block1)
 st.header("1- Business Objectives")
 st.text(block1)
 st.header("2- Asses Situation")
