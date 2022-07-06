@@ -37,6 +37,7 @@ if i is not None:
             g.create(i.name, cam_path="img2.jpeg")
             g.annotate("img2.jpeg")
             st.image("img2.jpeg")
+            st.image("Pictures/jet_scale.png", use_column_width=True)
 
             # prediction results
             score = ic.predict(i.name, "save_at_50.h5")
@@ -46,7 +47,9 @@ if i is not None:
                 "Your image is with " + healthy_res + " a healthy lung and with " + pneumonia_res + " a infected lung")
             os.remove(i.name)
             os.remove("img2.jpeg")
+
         # text
+
         st.text("Lorem ipsum dolor sit amet...")
 
     with col2:
@@ -59,6 +62,7 @@ if i is not None:
             g.create(i.name, cam_path="img2.jpeg")
             g.annotate("img2.jpeg")
             st.image("img2.jpeg")
+            st.image("Pictures/jet_scale.png", use_column_width=True)
 
             # prediction results
             score = ic.predict(i.name, "new_save_at_100.h5")
@@ -68,6 +72,8 @@ if i is not None:
                 "Your image is with " + healthy_res + " a healthy lung and with " + pneumonia_res + " a infected lung")
             os.remove(i.name)
             os.remove("img2.jpeg")
-        # text
-        st.text("Lorem ipsum dolor sit amet...")
+
         # test
+        # text
+
+        st.text("Lorem ipsum dolor sit amet...")
