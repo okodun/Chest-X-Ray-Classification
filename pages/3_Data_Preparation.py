@@ -54,7 +54,7 @@ with st.expander("Click here to view the data distribution before/after cropping
         st.caption("Initial data set")
     with after:
         st.image("Pictures/equal_data_set.png", width=500)
-        st.caption("Data set after trimming down the infected image_____s")
+        st.caption("Data set after trimming down the infected images")
 
 st.write(data_prep_3)
 
