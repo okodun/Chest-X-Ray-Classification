@@ -4,8 +4,8 @@ st.title("Business Understanding")
 
 # Blocks of texts
 Description = """The initial Business Understanding phase focuses on understanding the project objectives and requirements from a business 
-                perspective, and then converting this knowledge into a data mining problem definition, and a preliminary project plan 
-                designed to achieve the objectives """
+perspective, and then converting this knowledge into a data mining problem definition, and a preliminary project plan designed to achieve 
+the objectives """
 block1 = "1- Business Objectives"
 block2 = "2- Asses Situation"
 block3 = "3- Determine Data Mining goals"
