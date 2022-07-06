@@ -39,10 +39,10 @@ st.write(data_prep_1)
 with st.expander("Click here to view a comparison before/after augmentation"):
     old, new = st.columns(2)
     with old:
-        st.image("pages/Images/Augmentation_vorher.png")
+        st.image("Pictures/Augmentation_vorher.png")
         st.caption("Before augmentation.")
     with new:
-        st.image("pages/Images/Augmentation_nachher.png")
+        st.image("Pictures/Augmentation_nachher.png")
         st.caption("After augmentation.")
 
 st.write(data_prep_2)
@@ -53,7 +53,7 @@ with st.expander("Click here to view the data distribution before/after cropping
         st.image("Data Set Analysis/train.png", width=500)
         st.caption("Initial data set")
     with after:
-        st.image("pages/Images/equal_data_set.png", width=500)
+        st.image("Pictures/equal_data_set.png", width=500)
         st.caption("Data set after trimming down the infected image_____s")
 
 st.write(data_prep_3)
