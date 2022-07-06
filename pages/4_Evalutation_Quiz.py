@@ -1,7 +1,7 @@
 import streamlit as st
 
 # set page configuration for app
-ICON = "lungs_favicon.png"
+ICON = "Pictures/lungs_favicon.png"
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
 st.set_page_config(page_title="Evaluation Quiz",
                    page_icon=ICON,

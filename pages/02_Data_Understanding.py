@@ -1,6 +1,6 @@
 import streamlit as st
 
-ICON = "lungs_favicon.png"
+ICON = "Pictures/lungs_favicon.png"
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
 st.set_page_config(page_title="Data Understanding",
                    page_icon=ICON,
@@ -10,7 +10,7 @@ st.set_page_config(page_title="Data Understanding",
 
 
 
-crisp = 'Crisp_dm.jpg'
+crisp = 'Pictures/Crisp_dm.jpg'
 hist = 'train.png'
 
 DU_text = """In the Data Understanding phase the focus is to identify, collect, and analyze
@@ -35,8 +35,8 @@ images_des = """ Here is an example of to samples from the dataset in the traini
 for healthy lungs which you can see the difference between the quality of
 both pictures.
 """
-image_high = "normal_high_quality.jpeg"
-image_low = "normal_low_quality.jpeg"
+image_high = "Pictures/normal_high_quality.jpeg"
+image_low = "Pictures/normal_low_quality.jpeg"
 
 # Page design:
 st.title ( 'Data Understanding' )

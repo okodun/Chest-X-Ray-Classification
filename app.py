@@ -5,9 +5,9 @@ import os
 import image_classification as ic
 
 # texts and image paths
-ICON = "lungs_favicon.png"
-HEALTHY_LUNG = "healthy_lung.jpeg"
-INFECTED_LUNG = "infected_lung.jpeg"
+ICON = "Pictures/lungs_favicon.png"
+HEALTHY_LUNG = "Pictures/healthy_lung.jpeg"
+INFECTED_LUNG = "Pictures/infected_lung.jpeg"
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
 
 # set page configuration for app

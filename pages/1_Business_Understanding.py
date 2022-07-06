@@ -1,7 +1,7 @@
 import streamlit as st
 
 # set page configuration for app
-ICON = "lungs_favicon.png"
+ICON = "Pictures/lungs_favicon.png"
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
 st.set_page_config(page_title="Business Understanding",
                    page_icon=ICON,
@@ -23,7 +23,7 @@ block2 = """Inventory of Ressources:
 block3 = """Determine Data Mining Goals 
 + Data Mining Success Criteria"""
 block4 = """Project Plan"""
-image1 = """Pictures/BU/CRISP-DM_Business_understanding.png"""
+image1 = """Pictures/CRISP-DM_Business_understanding.png"""
 
 st.header("Definition")
 st.image(image1)
