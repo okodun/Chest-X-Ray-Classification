@@ -17,12 +17,11 @@ DU_text = """In the Data Understanding phase the focus is to identify, collect, 
 the data sets that can help you accomplish the project goals. So first we tried to
 understand how the Data we have is structured."""
 
-DU_des = """The Kaggle dataset which contains
-   5683 X-Ray images (JPEG).The dataset is categorized into 3 which are training,testing,
-   and validation, each image category consists of subfolders like Normal and Pneumonia.
-   Clearly, chest X-ray images (anterior-posterior) have been examined by the review
-   accomplices of pediatric patients within the age group (1 to 5 years) collected from
-   Guangzhou Women and Children Medical Center, Guangzhou, Southern China."""
+DU_des =  """The Kaggle dataset which contains 5683 X-Ray images (JPEG).The datasetis categorized into 3
+which are training,testing,and validation,each image category consists of subfolders like Normal and Pneumonia.
+Clearly, chest X-ray images (anterior-posterior) have been examined by the review
+accomplices of pediatric patients within the age group (1 to 5 years) collected from
+Guangzhou Women and Children Medical Center, Guangzhou, Southern China."""
 
 Challenges = """Since our Data
 was already spilt we did not have a lot of challenges in the beginning, however we had
