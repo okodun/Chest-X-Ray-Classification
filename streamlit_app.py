@@ -14,8 +14,8 @@ import annotation_tool as at
 # texts and image paths
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
 ICON = "lungs_favicon.png"
-HEALTHY_LUNG = "healthy_lung.jpeg"
-INFECTED_LUNG = "infected_lung.jpeg"
+HEALTHY_LUNG = "Pictures/healthy_lung.jpeg"
+INFECTED_LUNG = "Pictures/infected_lung.jpeg"
 
 # set page configuration for app
 st.set_page_config(page_title="Chest X-Ray Classification",
