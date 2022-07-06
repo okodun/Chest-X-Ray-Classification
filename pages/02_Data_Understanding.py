@@ -1,23 +1,20 @@
 import streamlit as st
 
-ICON = "Pictures/lungs_favicon.png"
+ICON = "lungs_favicon.png"
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
 st.set_page_config(page_title="Data Understanding",
                    page_icon=ICON,
                    layout="wide",
                    menu_items={"About": ABOUT_TEXT})
 
-
-
-
 crisp = 'Pictures/Crisp_dm.jpg'
-hist = 'train.png'
+hist = 'Pictures/train.png'
 
 DU_text = """In the Data Understanding phase the focus is to identify, collect, and analyze
 the data sets that can help you accomplish the project goals. So first we tried to
 understand how the Data we have is structured."""
 
-DU_des =  """The Kaggle dataset which contains 5683 X-Ray images (JPEG).The datasetis categorized into 3
+DU_des = """The Kaggle dataset which contains 5683 X-Ray images (JPEG).The datasetis categorized into 3
 which are training,testing,and validation,each image category consists of subfolders like Normal and Pneumonia.
 Clearly, chest X-ray images (anterior-posterior) have been examined by the review
 accomplices of pediatric patients within the age group (1 to 5 years) collected from
@@ -39,27 +36,26 @@ image_high = "Pictures/normal_high_quality.jpeg"
 image_low = "Pictures/normal_low_quality.jpeg"
 
 # Page design:
-st.title ( 'Data Understanding' )
-st.image ( crisp, width=500 )
-st.text ( DU_text )
-with st.expander ( "Dataset Description" ):
-    st.text ( DU_des )
+st.title('Data Understanding')
+st.image(crisp, width=500)
+st.text(DU_text)
+with st.expander("Dataset Description"):
+    st.text(DU_des)
 
-with st.expander ( "Challenges  and Problems" ):
-    st.text ( Challenges )
-    st.image ( hist )
-    st.text ( problem2 )
-    st.text ( images_des )
+with st.expander("Challenges  and Problems"):
+    st.text(Challenges)
+    st.image(hist)
+    st.text(problem2)
+    st.text(images_des)
 
-    col1, col2 = st.columns ( 2 )
+    col1, col2 = st.columns(2)
 
     with col1:
-        st.image ( image_high )
-        st.text ( """This one is with higher quality
-         and bigger size(2,4 MB)""" )
+        st.image(image_high)
+        st.text("""This one is with higher quality
+         and bigger size(2,4 MB)""")
 
     with col2:
-        st.image ( image_low )
-        st.text ( """And this sample is smaller and
-         with lower quality(140 KB)""" )
-
+        st.image(image_low)
+        st.text("""And this sample is smaller and
+         with lower quality(140 KB)""")
