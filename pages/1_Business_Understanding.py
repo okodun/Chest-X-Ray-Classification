@@ -15,11 +15,15 @@ Description = """The initial Business Understanding phase focuses on understandi
 objectives and requirements from a business perspective, and then converting 
 this knowledge into a data mining problem definition, and a preliminary
 project plan designed to achieve the objectives """
-block1 = "Business Objectives + Business success criteria"
-block2 = "Inventory of Ressources + Requirements, Assumptions and Constraints + Risks and Contingencies"
-block3 = "Determine Data Mining Goals + Data Mining Success Criteria"
-block4 = "Project Plan"
-image1 = "Pictures/BU/CRISP-DM_Business_understanding.png"
+block1 = """- Creating a machine learning model that can accurately indentify pneumonia infected lungs+ 
+- Business success criteria: Accuracy, consistency..."""
+block2 = """Inventory of Ressources: 
++ Requirements, Assumptions and Constraints 
++ Risks and Contingencies"""
+block3 = """Determine Data Mining Goals 
++ Data Mining Success Criteria"""
+block4 = """Project Plan"""
+image1 = """Pictures/BU/CRISP-DM_Business_understanding.png"""
 
 st.header("Definition")
 st.image(image1)
