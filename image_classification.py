@@ -2,7 +2,6 @@
 https://www.projectpro.io/article/deep-learning-for-image-classification-in-python-with-cnn/418#toc-1
 (https://towardsdatascience.com/medical-x-ray-%EF%B8%8F-image-classification-using-convolutional-neural-network-9a6d33b1c2a)
 """
-import os
 
 import tensorflow as tf
 import keras
@@ -91,7 +90,6 @@ def create_dataset(mode: str):
         "train": "training",
         "val": "validation"
     }
-    subset_name = subsets.get(mode)
 
     # create path to dataset
     path = BASE_PATH + "/" + mode
@@ -99,8 +97,6 @@ def create_dataset(mode: str):
     # create data set
     return keras.utils.image_dataset_from_directory(
         path,
-        # validation_split=0.2,
-        # subset=subset_name,
         seed=1337,
         image_size=IMAGE_SIZE,  # resize images
         batch_size=BATCH_SIZE  # define batch size
@@ -223,61 +219,3 @@ def predict(path_to_image: str, path_to_model: str):
 
     # score for pneumonia -> normal = 1 - score
     return predictions[0]
-
-
-"""# train_model(100)
-p = BASE_PATH + "/" + "test/PNEUMONIA"
-result = []
-for i in list(next(os.walk(p))[2]):
-    result.append(predict(p + "/" + i, "new_save_at_100.h5"))
-print(sum(result) / len(result))"""
-
-"""res = predict(
-    "/home/felix/Documents/University/SS2022/ML4B/Data Set Chest X-Ray/test/PNEUMONIA/person85_bacteria_422.jpeg",
-    "save_at_50.h5")
-print("Pneumonia: %.4f%% | Normal: %.4f%%" % (100 * res, 100 * (1 - res)))"""
-
-"""# testing
-val_ds = create_dataset("val")
-model = keras.models.load_model("save_at_50.h5")
-model.compile(
-    optimizer=keras.optimizers.Adam(1e-3),
-    loss="binary_crossentropy",
-    metrics=["accuracy"],
-)
-
-idg = preprocessing.image.ImageDataGenerator()
-test = idg.flow_from_directory(BASE_PATH + "/test", class_mode="binary", batch_size=BATCH_SIZE)
-
-ds = keras.utils.image_dataset_from_directory(
-    BASE_PATH + "/test",
-    validation_split=0.2,
-    subset="training",
-    seed=1337,
-    image_size=IMAGE_SIZE,  # resize images
-    batch_size=BATCH_SIZE  # define batch size
-)
-
-print(model.evaluate(ds, verbose=0))
-results = []
-for images in os.walk(BASE_PATH + "/test/PNEUMONIA"):
-    for image in images[2]:
-        img_path = "/home/felix/Documents/University/SS2022/ML4B/Data Set Chest X-Ray/test/PNEUMONIA/" + image
-        img = keras.utils.load_img(
-            img_path, target_size=IMAGE_SIZE
-        )
-        img_array = keras.utils.img_to_array(img)
-        img_array = tf.expand_dims(img_array, 0)  # Create batch axis
-
-        predictions = model.predict(x=img_array)
-        score = predictions[0]
-        res = 100 * score
-        results.append(res)
-print(sum(results) / len(results))
-# 38.38% on normal
-# 99.63 on pneumonia
-
-print(
-    "This image is %.2f percent normal and %.2f percent pneumonia."
-    % (100 * (1 - score), 100 * score)
-)"""

@@ -1,5 +1,13 @@
 import streamlit as st
 
+# set page configuration for app
+ICON = "lungs_favicon.png"
+ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
+st.set_page_config(page_title="Data Preparation",
+                   page_icon=ICON,
+                   layout="wide",
+                   menu_items={"About": ABOUT_TEXT})
+
 data_prep_1 = """
 Since the data was already split into train, test and validation, we didn't have to worry about it and
 were able to jump straight into preparing the data. To start things off, we decided to augment our data,
@@ -22,7 +30,6 @@ st.title("Data Preparation")
 st.text(data_prep_1)
 st.image(train, width=500)
 st.text(data_prep_2)
-
 
 # TODO wie viele zusätzliche Bilder durch augmentation?
 # TODO Evtl. 2-3 Bilder einfügen: 1x ursprüngliches Lungenbild, 1-2x augmentierte Version

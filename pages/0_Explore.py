@@ -11,7 +11,7 @@ INFECTED_LUNG = "infected_lung.jpeg"
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
 
 # set page configuration for app
-st.set_page_config(page_title="Detecting Pneumonia",
+st.set_page_config(page_title="Explore",
                    page_icon=ICON,
                    layout="wide",
                    menu_items={"About": ABOUT_TEXT})

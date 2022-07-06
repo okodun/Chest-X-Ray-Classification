@@ -1,5 +1,14 @@
 import streamlit as st
-crisp='Crisp_dm.jpg'
+
+# set page configuration for app
+ICON = "lungs_favicon.png"
+ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."
+st.set_page_config(page_title="Data Understanding",
+                   page_icon=ICON,
+                   layout="wide",
+                   menu_items={"About": ABOUT_TEXT})
+
+crisp = 'Crisp_dm.jpg'
 hist = 'train.png'
 st.title('Data Understanding')
 
@@ -20,7 +29,7 @@ with a solution."""
 problem2 = """Another Problem was that our data samples were
 taken using different sizes and different quality which was another problem we needed
 to overcome."""
-images_des=""" Here is an example of to samples from the dataset in the training subfolder
+images_des = """ Here is an example of to samples from the dataset in the training subfolder
 for healthy lungs which you can see the difference between the quality of
 both pictures.
 """
@@ -28,26 +37,17 @@ both pictures.
 image_high = "normal_high_quality.jpeg"
 image_low = "normal_low_quality.jpeg"
 
-
-
 st.text(DU_text)
 st.image(hist)
 st.text(problem2)
 st.text(images_des)
 
-col1,col2 = st.columns(2)
+col1, col2 = st.columns(2)
 
 with col1:
     st.image(image_high)
-    st.text("""This one is with higher quality
-     and bigger size(2,4 MB)""")
-
+    st.text("""This one is with higher quality and bigger size(2,4 MB)""")
 
 with col2:
     st.image(image_low)
-    st.text("""And this sample is smaller and
-     with lower quality(140 KB)""")
-
-
-
-
+    st.text("""And this sample is smaller and with lower quality(140 KB)""")
