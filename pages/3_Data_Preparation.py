@@ -9,27 +9,61 @@ st.set_page_config(page_title="Data Preparation",
                    menu_items={"About": ABOUT_TEXT})
 
 data_prep_1 = """
-Since the data was already split into train, test and validation, we didn't have to worry about it and
-were able to jump straight into preparing the data. To start things off, we decided to augment our data,
-since there were only 5216 images to train on.
+Since the data was already split into train, test and validation, we didn't have to worry about it and were able to jump
+straight into preparing the data. To start things off, we had to scale the images to a uniform size, since they had all 
+possible sizes and shapes. As our next step, we  decided to augment our data in order to prevent bias. For that, we 
+randomly flipped and/or rotated the images as seen in the expandable box below:
 """
+
+# hier Bildvergleich Augmentation (vorher/nachher)
 
 data_prep_2 = """
-After flipping the images and randomly rotating them, we managed to gather an additional NUMMER EINFÜGEN
-training images, leading to a total of NUMMER EINFÜGEN. With this larger amount of data, we decided to 
-train our first model by running it for 50 epochs. Sadly, it only scored 38%, so we took another look at
-the data. We then realised that there were much more infected lungs in our data set than healthy ones. 
-As a result, we performed a random cut on the infected images, so there were as many healthy lungs as 
-infected ones. With this new data set we trained a new model, which we gave 100 epochs to learn the 
-training data. This improved model managed to score an acceptable 70%.
+After flipping and rotating the images, we felt ready to test a model on our modified data and ran it for 50 epochs, but
+we only scored 38% with it. Once we took a closer look at the data, we realised that there were far more images of 
+infected lungs (3875) than healthy ones (1341). As a result, we performed a random cut on the infected images, so there 
+were as many healthy lungs as infected ones (1341 each):
 """
 
-train = "Data Set Analysis/train.png"
+# hier Statistik Verhältnis pneumonia/normal
+
+data_prep_3 = """
+With this new data set we trained a new model, which we gave 100 epochs to learn the training data. With 
+this improved model we managed to score an acceptable 70%. To significantly increase this score, we would need a larger 
+amount of images to test on. 
+"""
+
 
 st.title("Data Preparation")
-st.text(data_prep_1)
-st.image(train, width=500)
-st.text(data_prep_2)
+st.write(data_prep_1)
 
-# TODO wie viele zusätzliche Bilder durch augmentation?
-# TODO Evtl. 2-3 Bilder einfügen: 1x ursprüngliches Lungenbild, 1-2x augmentierte Version
+with st.expander("Click here to view a comparison before/after augmentation"):
+    old, new = st.columns(2)
+    with old:
+        st.image("Pictures/Augmentation_vorher.png")
+        st.caption("Before augmentation.")
+    with new:
+        st.image("Pictures/Augmentation_nachher.png")
+        st.caption("After augmentation.")
+
+st.write(data_prep_2)
+
+with st.expander("Click here to view the data distribution before/after cropping"):
+    before, after = st.columns(2)
+    with before:
+        st.image("Data Set Analysis/train.png", width=500)
+        st.caption("Initial data set")
+    with after:
+        st.image("Pictures/equal_data_set.png", width=500)
+        st.caption("Data set after trimming down the infected images")
+
+st.write(data_prep_3)
+
+
+
+
+# TODO clickiness
+
+# Verhältnisse: (Kaggle)
+#    Test: normal 234, pneumonia 390, total 624
+#    Train: normal 1341, pneumonia 3875, total 5216
+#    Val: normal 8, pneumonia 8, total 16
