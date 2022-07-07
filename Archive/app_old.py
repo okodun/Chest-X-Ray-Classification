@@ -41,7 +41,7 @@ if i is not None:
 a, b = st.columns(2)
 
 with a:
-    g = GradCam("save_at_50.h5")
+    g = GradCam("../save_at_50.h5")
 
     if i is not None:
         with open(os.path.join("", i.name), "wb") as file:
@@ -51,7 +51,7 @@ with a:
         st.image("img2.jpeg")
 
         # prediction results
-        score = ic.predict(i.name, "save_at_50.h5")
+        score = ic.predict(i.name, "../save_at_50.h5")
         healthy_res = "%.4f%%" % (100 * (1 - score))
         pneumonia_res = "%.4f%%" % (100 * score)
         st.text("Your image is with " + healthy_res + " a healthy lung and with " + pneumonia_res + " a infected lung")
@@ -59,7 +59,7 @@ with a:
         os.remove("img2.jpeg")
 
 with b:
-    g = GradCam("new_save_at_100.h5")
+    g = GradCam("../new_save_at_100.h5")
     # i = st.file_uploader(label="", type=["jpeg", "jpg", "png"])
     if i is not None:
         with open(os.path.join("", i.name), "wb") as file:
@@ -69,7 +69,7 @@ with b:
         st.image("img2.jpeg")
 
         # prediction results
-        score = ic.predict(i.name, "new_save_at_100.h5")
+        score = ic.predict(i.name, "../new_save_at_100.h5")
         healthy_res = "%.4f%%" % (100 * (1 - score))
         pneumonia_res = "%.4f%%" % (100 * score)
         st.text("Your image is with " + healthy_res + " a healthy lung and with " + pneumonia_res + " a infected lung")

@@ -48,13 +48,9 @@ if i is not None:
             healthy_res = "%.4f%%" % (100 * (1 - score))
             pneumonia_res = "%.4f%%" % (100 * score)
             st.text(
-                "Your image is with " + healthy_res + " a healthy lung and with " + pneumonia_res + " a infected lung")
+                "Your image is with " + healthy_res + " a healthy lung and with " + pneumonia_res + " an infected lung")
             os.remove(i.name)
             os.remove("img2.jpeg")
-
-        # text
-
-        st.text("Lorem ipsum dolor sit amet...")
 
     with col2:
         st.header("New Model")
@@ -73,11 +69,6 @@ if i is not None:
             healthy_res = "%.4f%%" % (100 * (1 - score))
             pneumonia_res = "%.4f%%" % (100 * score)
             st.text(
-                "Your image is with " + healthy_res + " a healthy lung and with " + pneumonia_res + " a infected lung")
+                "Your image is with " + healthy_res + " a healthy lung and with " + pneumonia_res + " an infected lung")
             os.remove(i.name)
             os.remove("img2.jpeg")
-
-        # test
-        # text
-
-        st.text("Lorem ipsum dolor sit amet...")

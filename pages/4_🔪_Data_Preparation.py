@@ -29,9 +29,8 @@ were as many healthy lungs as infected ones (1341 each):
 data_prep_3 = """
 With this new data set we trained a new model, which we gave 100 epochs to learn the training data. With 
 this improved model we managed to score an acceptable 70%. To significantly increase this score, we would need a larger 
-amount of images to test on. 
+amount of images to test on and hardware with more computational power. 
 """
-
 
 st.title("Data Preparation")
 st.write(data_prep_1)

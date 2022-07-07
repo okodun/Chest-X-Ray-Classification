@@ -6,10 +6,6 @@ image-comparison provided by robmarkcole@GitHub
 
 import streamlit as st
 from streamlit_image_comparison import image_comparison
-import os
-from grad_cam import GradCam
-import image_classification as ic
-import annotation_tool as at
 
 # texts and image paths
 ABOUT_TEXT = "Created by Felix Schuhmann, Hussein Galal, Philippe Huber and Abderrahmane Bennani."

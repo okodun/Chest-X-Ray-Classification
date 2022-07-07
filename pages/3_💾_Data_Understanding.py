@@ -52,10 +52,8 @@ with st.expander("Challenges  and Problems"):
 
     with col1:
         st.image(image_high)
-        st.text("""This one is with higher quality
-         and bigger size(2,4 MB)""")
+        st.text(""" This one is with higher quality and bigger size(2,4 MB)""")
 
     with col2:
         st.image(image_low)
-        st.text("""And this sample is smaller and
-         with lower quality(140 KB)""")
+        st.text("""And this sample is smaller and with lower quality(140 KB)""")

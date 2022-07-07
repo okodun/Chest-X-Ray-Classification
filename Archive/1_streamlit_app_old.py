@@ -86,7 +86,7 @@ col4.text(intro_abderrahmane)
 
 st.header("Upload your x-ray")
 i = st.file_uploader(label="", type=["jpeg", "jpg", "png"])
-g = GradCam("save_at_50.h5")
+g = GradCam("../save_at_50.h5")
 
 if i is not None:
     with open(os.path.join("", i.name), "wb") as file:
