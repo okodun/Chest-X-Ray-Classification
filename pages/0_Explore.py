@@ -17,11 +17,15 @@ st.set_page_config(page_title="Explore",
                    menu_items={"About": ABOUT_TEXT})
 
 # title
-st.title("Explore our Model")
-st.text("Description of our models...")
+st.title("Explore our Models")
+text = """
+We have trained two models. Our old model was not bad, but we were able to improve its prediction accuracy.
+You can check out their differences below.
+"""
+st.text(text)
 
 # upload file
-i = st.file_uploader(label="", type=["jpeg", "jpg", "png"])
+i = st.file_uploader(label="Upload an x-ray image of a lung", type=["jpeg", "jpg", "png"])
 
 # create columns
 col1, col2 = st.columns(2)
