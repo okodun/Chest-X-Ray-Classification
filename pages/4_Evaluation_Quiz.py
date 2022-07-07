@@ -95,7 +95,7 @@ Here is an image of two cute little kittens. Do you have any guess what might ha
 try to predict whether this is an infected or healthy lung?
 """
 st.text(covid_text)
-st.image("Pictures/Evaluation Quiz/Cats.JPG", width=500)
+st.image("Pictures/Evaluation Quiz/Cats.JPG", width=700)
 pc = st.empty()
 pw = st.empty()
 correct = pc.button("I think it detects something")
