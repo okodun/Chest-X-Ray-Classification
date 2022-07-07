@@ -20,12 +20,13 @@ infected lungs.
 - Business success criteria: The Model has to be superior to normal diagnosis made by doctors"""
 block2 = """Inventory of Ressources:
 + Hardware: NVIDIA RTX 2060 SUPER (6GB dedicated RAM) / AMD Ryzen 3900x
-+ Software: Kaggle, GradCam, Keras, 
++ Software: Kaggle, GradCam, Keras
 + Dataset: Chest X-Ray Images (Pneumonia)"""
 block3 = """Data Mining Goal: A model that determines from a Chest X-Ray if the patient
 has Pneumonia or not.
 Data Mining Success Criteria: The Model has to be accurate and consistent"""
-block4 = """Project Plan"""
+block4 = """Prepare the Data (Kaggle Dataset) -> Create a Neural Network using Keras -> Implement GradCam ->
+Refine the Model -> Evaluate"""
 image1 = """Pictures/CRISP-DM_Business_understanding.png"""
 
 st.header("Definition")
