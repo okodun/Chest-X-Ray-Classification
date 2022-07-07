@@ -15,7 +15,7 @@ possible sizes and shapes. As our next step, we  decided to augment our data in 
 randomly flipped and/or rotated the images as seen in the expandable box below:
 """
 
-# hier Bildvergleich Augmentation (vorher/nachher)
+# here image comparison augmentation (before/after)
 
 data_prep_2 = """
 After flipping and rotating the images, we felt ready to test a model on our modified data and ran it for 50 epochs, but
@@ -24,7 +24,7 @@ infected lungs (3875) than healthy ones (1341). As a result, we performed a rand
 were as many healthy lungs as infected ones (1341 each):
 """
 
-# hier Statistik Verhältnis pneumonia/normal
+# here statistics of ratio (pneumonia/normal)
 
 data_prep_3 = """
 With this new data set we trained a new model, which we gave 100 epochs to learn the training data. With 
@@ -57,13 +57,3 @@ with st.expander("Click here to view the data distribution before/after cropping
         st.caption("Data set after trimming down the infected images")
 
 st.write(data_prep_3)
-
-
-
-
-# TODO clickiness
-
-# Verhältnisse: (Kaggle)
-#    Test: normal 234, pneumonia 390, total 624
-#    Train: normal 1341, pneumonia 3875, total 5216
-#    Val: normal 8, pneumonia 8, total 16
